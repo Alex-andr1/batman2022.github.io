@@ -1,0 +1,481 @@
+*, 
+*::before, 
+*::after{
+    box-sizing: border-box;
+}
+*:focus:not(:focus-visible){
+    outline: none;
+}
+@font-face {
+	font-family: 'Museo Sans';
+	src: url('../fonts/MuseoSansCyrl-700.eot');
+	src: local('MuseoSansCyrl-700'),
+		url('../fonts/MuseoSansCyrl-700.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/MuseoSansCyrl-700.woff') format('woff'),
+		url('../fonts/MuseoSansCyrl-700.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+html, 
+body{
+    font-size: 62.5%; /*сброс с 16px до 10px, чтобы 1rem = 10px*/
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    color: #ffffff;
+}
+h1, h2, h3, h4, h5, h6{ /*обнуление заголовков*/
+    margin: 0;
+    padding: 0;
+}
+img{ /*обратить внимание - начало 4го урока*/
+    width: 100%;
+    height: 100%;
+}
+.container{ /*обращение ко всем контейнерам*/
+    width: 113.5rem; /*1135px; /*rem, 16px по умолчанию (сброс смотри выше)*/
+    margin: 0 auto; /*равнение по центру по горизонтали*/
+}
+/*сетка*/
+@media (max-width: 108em){
+    html {
+        font-size: 9px;
+    }
+}
+@media (max-width: 105em){
+    html {
+        font-size: 8.75px;
+    }
+}
+@media (max-width: 91.5em){
+    html {
+        font-size: 7.9px;
+    }
+}
+@media (max-width: 91em) {
+    html {
+        font-size: 8.4px;
+    }
+}
+@media (max-width: 90em){
+    html {
+        font-size: 7.9px;
+    }
+}
+@media (max-width: 80em){
+    html {
+        font-size: 7.2px
+    }
+}
+@media (max-width: 72em){
+    html {
+        font-size: 6.5px;
+    }
+}
+@media (max-width: 64em){
+    html {
+        font-size: 5.5px;
+    }
+}
+@media (max-width: 44em){
+    html {
+        font-size: 9px;
+    }
+}
+@media (max-width: 38em){
+    html {
+        font-size: 8px;
+    }
+}
+@media (max-width: 34em){
+    html {
+        font-size: 7px;
+    }
+}
+@media (max-width: 30em){
+    html {
+        font-size: 6px;
+    }
+}
+@media (max-width: 26em){
+    html {
+        font-size: 4.5px;
+    }
+}
+@media (max-width: 21em){
+    html {
+        font-size: 4.4px;
+    }
+}
+/*сетка*/
+
+/*header........................................................*/
+.header{
+   /* padding-top: 6.4rem;*/
+    padding-bottom: 6.4rem;
+    position: absolute; 
+    /*left: 50%; выравнивание абслолютной позиции по центру
+    top: 50%;
+    transform: translate(-50%, -50%);*/
+    left: 50%; /*центрирование*/
+    top: 11.4rem;
+    transform: translate(-52%, 0);
+}
+.header .container{ /*обращение только к контейнеру в header*/
+    display: flex;
+    justify-content: space-between; /*разбросать по 2м сторонам контейнера*/
+    align-items: center;
+}
+.header__menu{
+    display: flex;
+    align-items: center;
+}
+.header__logo{
+    width: 7.9rem;
+    height: 2.8rem;
+    /*margin-left: 3.9rem;
+    margin-right: 2.4rem;*/
+    margin: 0 2.4rem 0 3.9rem;
+}
+.header__nav a:not(:last-child){ /*все элементы кроме последнего*/
+    margin-right: 2.4rem;
+}
+.header__nav a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 1.9rem;
+    line-height: 114%;
+}
+.header__socials{
+    display: flex;
+   /* position: absolute;*/
+    padding-top: 0rem; /*сам добавил/ смотреть ещё*/
+}
+.header__social-icon{
+    width: 2.7rem;
+    height: 2.6rem;
+}
+.header__social-icon:not(:last-child){ /*удобный отступ справа*/
+    margin-right: 3rem;
+}
+/*body.........................................................*/
+/*body{
+    background: url('../img/background.jpg');
+}*/
+.header__nav-mobile, /*скрываем мобильные моменты*/
+/*.header__menu-close*/ /**/
+.menu-burger{
+    display: none;
+}
+.header__menu-close{
+    display: none;
+}
+
+.main{
+    padding-top: 18.7rem; /*он начала страницы включая длину header*/
+    padding-bottom: 10.4rem; /*расширить картинку добавляя padding-bottom*/
+    background: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /*во весь экран*/
+    background-position-x: center;
+    background-position-y: top; /*равнение до нижней границы*/
+}
+.main__header{
+    font-family: 'Museo Sans';
+    font-size: 7.6rem;
+    line-height: 120%;/*91px/76px=120%*/
+}
+.main__rating-title{
+    font-size: 1.4rem;
+    line-height: 114%;
+    margin-bottom: 0.5rem;
+}
+.main__rating-wrap{ /*1*/
+    display: flex;
+    align-items: center; /*такое выравнивание даёт аналог li + float-left - применить*/
+}
+.main__raiting-stars{ /*2 (div c div'ами)*/ /*display: flex; align-items: center;*/
+    display: flex;
+    align-items: center;
+    margin-right: 0.9rem;
+}
+.main__rating-number{
+    font-size: 1.2rem;
+    line-height: 117%;
+}
+.main__rating-star{
+    width: 1.2rem;
+    height: 1.2rem;
+    flex-shrink: 0; /*коэффициент сжатия, 0 - не будет сжиматься*/ /*полезная штука*/
+    cursor: pointer;
+}
+.main__raiting-star:not(:last-child){
+    margin-right: 0.4rem;
+}
+/*.main__rating{ нах не нужен
+    margin-bottom: 1rem;
+}*/
+.main__description-wrap{
+    display: flex;
+    align-items: center;
+}
+.main__description{
+    max-width: 52.8rem;
+    margin-bottom: 4.1rem;
+    font-size: 1.4rem;
+    line-height: 150%;
+}
+.main__button-play{
+    display: flex;  /*1*/
+    justify-content: center; /*2 выравнивание по вертикали и горизонтали*/
+    align-items: center; /*3*/
+    width: 13.2rem;
+    height: 13.2rem;
+    margin-left: 33.1rem;
+    border-radius: 50%;
+    background-color: #391917;
+    cursor: pointer;
+}
+.main__button-dark{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: #151515;
+}
+.main__button-dark img{
+    width: 5rem;
+    height: 5rem;
+    margin-left: 1rem;
+}
+
+.main__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 24.5rem;
+    padding: 2.2rem 7.2rem;
+    margin-bottom: 8.8rem;
+    font-size: 1.4rem;
+    line-height: 114%;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #151515;
+    border-radius: 0.8rem;
+}
+/*slider........................................................*/
+
+.main-slider__wrap{
+    max-width: 41.5rem;
+    display: flex;
+    align-items: center; /*выравнивание объектов по центру горизонтали*/
+}
+.main-slider__slide{
+    position: relative;
+    width: 16.4rem;
+    height: 10.5rem;
+    border-radius: 0.8rem;
+    overflow: hidden; /*обрезать лишнее в картинке (углы за border-radius)*/
+}
+.main-slider__slide span{
+    position: absolute; /*абсолютное позицианирование в относительном div будет относительно этого div*/
+    left: 1.2rem;
+    bottom: 0.6rem;
+    transform: translateX(0, 0);
+    font-size: 1rem;
+    font-weight: 120%;
+}
+.main-slider__slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*растянуть внутри изображения с блоке*/
+}
+.main-slider__arrow{
+    width: 3.2rem;
+    height: 2.2rem;
+    margin-left: 2.8rem;
+    flex-shrink: 0; /*чтобы стрелка не сузилась*/
+    cursor: pointer;
+}
+
+/*footer........................................................*/
+.footer{
+    background: #030102;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__menu{
+    display: flex;
+    padding-left: 0;
+
+}
+.footer__menu li{
+    list-style: none;
+}
+.footer__menu li a{
+    color: #686767;
+    text-decoration: none;
+    font-size: 1.4rem;
+    line-height: 143%;
+}
+.footer__menu li:not(:last-child){
+    margin-right: 2.5rem;
+}
+.footer__copy{
+    font-size: 1.4rem;
+    line-height: 143%;
+    color: #686767;
+}
+/*
+.main__rating-title{
+    font-family: 'MuseoModerno', cursive;
+}*/
+.modal{ /*расположение на весь экран*/
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 3rem 0;
+    z-index: 100;
+    display: none; /*скрыть*/
+}
+.modal__inner{
+    width: 100rem;
+    height: 60rem;
+}
+.active{
+    display: flex; /*показать*/
+}
+
+@media (max-width: 48em){ /*48em = 768px*/
+    html {
+        font-size: 10px;
+    }
+    .container{
+        width: 100%;
+        padding: 0 3rem;
+    }
+    .header{
+        width: 69.4%;
+        background-color: #151515;
+        top: 0;
+        transform: translate(-28%, 0);
+        padding: 2rem 0;
+        z-index: 10;
+        display: none; /*пока*/
+    }
+    .header__socials{
+        margin-bottom: 2.2rem;
+    }
+    .header__logo{
+        margin-right: 4rem; /*посмотреть по обстоятельствам*/
+        margin-bottom: 4.5rem; /*этот тоже*/
+    }
+    .header .container, 
+    .header__nav, 
+    .header__menu{
+        display: flex;
+        flex-direction: column; /*см. ниже*/
+        /*если указать в родителе 
+        display: flex;  
+        align-items: center;
+        то при сжатии в медиа-запросе линия превратится в список*/
+    }
+    .header__nav{
+        display: none;
+    }
+    .header__nav-mobile{
+        display: flex;
+        flex-direction: column;
+    }
+    .header__nav-mobile a{
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: normal;
+        font-size: 1.4rem;
+        line-height: 114%;
+        display: inline-block;
+    }
+    .header__nav-mobile a:not(:last-child){
+        margin-bottom: 1.7rem;
+    }
+    .header__menu-close{
+        display: block;
+        position: absolute;
+        right: 4rem;
+        top: 4rem;
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+    .menu-burger{
+        display: block;
+        position: absolute;
+        right: 5%;
+        top: 3%;
+        width: 6rem;
+        height: 6rem;
+    }
+    .main{
+        background-position-x: 66%;
+    }
+    .main__description-wrap{
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
+    .main__button-play{
+        margin-left: 0; /*можно обнулить ранее заданный параметр*/
+    }
+    .main__button-play{
+        margin-bottom: 4.4rem;
+    }
+    .main-slider__arrow{
+        display: none;
+    }
+    .main-slider__wrap{
+        max-width: 53.5%;
+    }
+    .footer .container{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .modal{ /*расположение на весь экран*/
+        padding: 3rem;
+    }
+    .modal__inner{
+        width: 100%;
+        height: 40rem;
+    }
+}
+
+/* добавил/изменил - иметь в виду, возможно перенести в медиа запросы и убрать из основного меню
+
+.header__logo{ ОК
+    margin-bottom: 0; //было
+    margin-bottom: 8rem; //стало
+}
+.header__socials{
+    position: absolute;
+    padding-top: 5rem;
+}
+.header{
+   transform: translate(-50%, 0); //было
+   transform: translate(-28%, 0); //стало
+}
+
+// строка 165 скрытые блоки при меню ноутбука
+// строка 170 убирает весь header в меню ноутбука и крест
+попробовать медиа запрос от 768px
